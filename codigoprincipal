@@ -1,1 +1,112 @@
 
+using System;
+
+using System.Collections.Generic;
+
+using System.Linq;
+
+using System.Text;
+
+using System.Threading.Tasks;
+
+
+
+namespace Calculadora_que_nao_aceita_letras
+
+{
+    enum Menu { soma = 1, subtracao, multiplicacao, divisao, sair } // criei um novo tipo Menu com os valores do corpo.
+    class Program2
+
+    {
+        static void Main(string[] args)
+        {
+            bool sair = true; // variavel sair recebe o valor true (verdadeiro).
+            while (sair) // enquanto sair for verdadeiro execute os comando do corpo.
+            {
+                Console.WriteLine("=====Seja bem vindo a sua calculadora=====");
+                Console.WriteLine(" (1) Soma \n (2) Subtração \n (3) Multiplicação \n (4) Divisão \n (5) Sair\n Digite o número da opção desejada: ");
+                Menu opcaoselecionada = (Menu)int.Parse(Console.ReadLine()); // recebe  o valor, converte para inteiro, depois converte para enum de MENU e salva na variavel opcaoselecionada
+
+                switch (opcaoselecionada)
+                {
+                    case Menu.soma:
+                        soma();
+                        break;
+                    case Menu.subtracao:
+                        subtracao();
+                        break;
+                    case Menu.multiplicacao:
+                        multiplicacao();
+                        break;
+                    case Menu.divisao:
+                        divisao();
+                        break;
+                    case Menu.sair:
+                        sair = false;
+                        break;
+                    default:
+                        Console.WriteLine("Você escolheu uma opção inválida!");
+                        break;
+                }
+            }
+        }
+
+        static void soma()
+        {
+            Console.WriteLine("Você Escolheu a opção (1) Soma:");
+            Console.WriteLine("Digite o primeiro número: ");
+            float numero1 = float.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o Segundo número: ");
+            float numero2 = float.Parse(Console.ReadLine());
+            float resultado = numero1 + numero2;
+            Console.WriteLine("Resultado: {0}+{1}={2}", numero1, numero2, resultado);
+            System.Threading.Thread.Sleep(5000);
+            Console.WriteLine("Aperte ENTER para continuar.");
+            Console.ReadLine();
+            Console.Clear();           
+        }
+        static void subtracao()
+        {
+            Console.WriteLine("Você Escolheu a opção (2) Subtração:");
+            Console.WriteLine("Digite o primeiro número: ");
+            float numero1 = float.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o Segundo número: ");
+            float numero2 = float.Parse(Console.ReadLine());
+            float resultado = numero1 - numero2;
+            Console.WriteLine("Resultado: {0}-{1}={2}", numero1, numero2, resultado);
+            System.Threading.Thread.Sleep(5000);
+            Console.WriteLine("Aperte ENTER para continuar.");
+            Console.ReadLine();
+            Console.Clear();
+        }
+        static void multiplicacao()
+        {
+            Console.WriteLine("Você Escolheu a opção (3) Multiplicação:");
+            Console.WriteLine("Digite o primeiro número: ");
+            float numero1 = float.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o Segundo número: ");
+            float numero2 = float.Parse(Console.ReadLine());
+            float resultado = numero1*numero2;
+            Console.WriteLine("Resultado: {0}*{1}={2}", numero1, numero2, resultado);
+            System.Threading.Thread.Sleep(5000);
+            Console.WriteLine("Aperte ENTER para continuar.");
+            Console.ReadLine();
+            Console.Clear();
+        }
+        static void divisao()
+        {
+            Console.WriteLine("Você Escolheu a opção (4) Divisão:");
+            Console.WriteLine("Digite o primeiro número: ");
+            float numero1 = float.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o Segundo número: ");
+            float numero2 = float.Parse(Console.ReadLine());
+            float resultado = numero1 / numero2;
+            Console.WriteLine("Resultado: {0}/{1}={2}", numero1, numero2, resultado);
+            System.Threading.Thread.Sleep(5000);
+            Console.WriteLine("Aperte ENTER para continuar.");
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+    }
+}
